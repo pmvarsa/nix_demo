@@ -3,7 +3,7 @@ Demonstration Code
 
 This project contains some example code that I wrote as part of my Ph.D. thesis
 work. The main focus of this project was to implement a light transport model
-for snow, knows as [SPLITSnow](https://doi.org/10.1109/mcg.2023.3307517). The
+for snow, knows as [SPLITSnow](http://doi.org/10.1016/j.rse.2020.112272). The
 core functionality of the light interactions was implemented in C++, whereas the
 snow sample specification code was implemented using [Lua](https://www.lua.org/).
 To this end, a Lua interpreter was embedded into the C++ simulation code.
