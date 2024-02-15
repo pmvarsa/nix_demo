@@ -17,8 +17,8 @@ execution is akin to a "Hello, World!" program. The name of the executable is
 `nix_demo`, where "nix" was the code name of the project. ("Nix" being Latin for
 snow.) The Lua script is named `run.lua`.
 
-Getting Started With SPLITSnow
-==============================
+Getting Started
+---------------
 
 This document gives a brief overview of how to get started with the
 demonstration code. Instructions are provided for how to build the code, execute
