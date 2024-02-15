@@ -1,0 +1,58 @@
+#!/bin/bash
+
+BUILD=Release
+
+function usage() {
+	APP=`basename $0`
+	echo
+	echo "  $APP <options>"
+	echo
+	echo "     -h Display this help"
+	echo "     -r Generate Makefiles for a release build."
+	echo "     -d Generate Makefiles for a debug build."
+	echo
+}
+
+if [ $# -gt 0 ] ; then
+	if [ $1 = *"-h"* ] ; then
+		usage
+		exit 0
+	elif [ $1 = "-r" -o $1 = "-release" ] ; then
+		BUILD=Release
+	elif [ $1 = "-d" -o $1 = "-debug" ] ; then
+		BUILD=Debug
+	else
+		usage
+		exit 1
+	fi
+fi
+
+echo
+echo "Building build files for a $BUILD build in a folder called build."
+echo
+mkdir -p ${BUILD}
+rm -f build
+ln -s ${BUILD} build
+pushd ${BUILD} > /dev/null
+cmake -DCMAKE_BUILD_TYPE=${BUILD} ..
+CORES=`nproc`
+echo
+if [ ${CORES} -gt 1 ] ; then
+	echo "Now execute: (cd ${BUILD} && make -j${CORES})"
+else
+	echo "Now execute: (cd ${BUILD} && make)"
+fi
+# Put that command into the Linux middle-click paste buffer if possible
+if xset -q &> /dev/null ; then
+	if which xclip > /dev/null ; then
+		echo "(cd ${BUILD} && make -j${CORES})" | xclip
+	fi
+fi
+echo
+
+# Create a symlink in the scripts folder to the built executable
+popd > /dev/null
+if [ ! -h scripts/nix_demo ] ; then
+	ln -s ../build/src/nix_demo scripts/nix_demo
+fi
+
