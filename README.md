@@ -184,3 +184,44 @@ Your web browser should open a new tab to the source code documentation. A short
 introduction to the code is provided on the main page of the source code
 documentation.
 
+Attribution
+-----------
+
+As stated above, this demonstration code is only a small subset of the original
+project. The code presented here was designed and written by myself with help
+from the Lua project documentation as well as a plethora of other online and
+written sources. I would like to identify the Scott Meyers series of books on
+C++ as a particular source of help.
+
+The subset of code in this demonstration contains approximately 3000 lines of
+C++ and about 1600 lines of comments. The table below is the output from the
+[Count Lines of Code (CLOC)](https://github.com/AlDanial/cloc) project. At the
+time of writing, the complete project contains nearly 20000 lines of code --
+about half of which are written in C++, about 1/3rd is Lua, and the rest being a
+mixture of scripting languages such as Python and Bourne Shell. In addition to
+this, another 10000 lines of Matlab code were used in the analysis of the output
+data.
+
+```
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+C++                              28            510            284           1915
+C/C++ Header                     37            460           1297            855
+Markdown                          2             42              0            194
+CMake                             3             21             13            146
+Bourne Again Shell                1              6              2             50
+Lua                               1              7              7             13
+--------------------------------------------------------------------------------
+SUM:                             72           1046           1603           3173
+--------------------------------------------------------------------------------
+```
+
+The complete project is the result of the work by a succession of researchers
+and students over many years. The individuals are too numerous to name. Suffice
+it to say that I am indebted to the members of the [Natural Phenomena Simulation
+Group](http://www.npsg.uwaterloo.ca/) as well as the antecedents in my academic
+family tree. The entire code base *was* analyzed, updated, refactored and
+maintained by myself as part of my research work. As such, I take personal
+responsibility for all errors that may exist.
+
